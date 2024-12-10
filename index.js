@@ -27,7 +27,25 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 io.on("connection", (socket) => {
-
+  socket.on("message-api", async (text) => {
+      let botResponse = "";
+    
+      try {
+        const [gptResponse] = await Promise.all([
+          openai.chat.completions.create({
+            model: model,
+            messages: [
+              { role: "user", content: text},
+            ],
+          }),
+        ]);
+        const botResponse = gptResponse.choices[0].message.content;
+        io.emit("message", botResponse)
+      } catch (error) {
+        io.emit("error", { message: "Error al procesar la solicitud." });
+      }
+    
+  });
 })
 
 // Iniciar servidor
