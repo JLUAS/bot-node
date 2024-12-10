@@ -1,0 +1,22 @@
+{
+  "name": "bot-node",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000b\u0000o\u0000t\u0000-\u0000n\u0000o\u0000d\u0000e\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "fetch": "^1.1.0",
+    "http": "^0.0.1-security",
+    "openai": "^4.76.0",
+    "path": "^0.12.7",
+    "socket.io": "^4.8.1"
+  }
+}
