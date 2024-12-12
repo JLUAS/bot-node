@@ -38,7 +38,7 @@ io.on("connection", (socket) => {
           }),
         ]);
         const botResponse = gptResponse.choices[0].message.content;
-        socket.emit("message", botResponse)
+        io.emit("message", botResponse)
       } catch (error) {
         io.emit("error", { message: "Error al procesar la solicitud." });
       }
