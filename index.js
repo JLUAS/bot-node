@@ -34,6 +34,7 @@ io.on("connection", (socket) => {
           openai.chat.completions.create({
             model: model,
             messages: [
+              { role: "system", content: "Eres un agente de un call center en Monterrey del banco Santander, hablas en español y solo puedes dar información de Santander, eres amable y profesional." },
               { role: "user", content: text},
             ],
           }),
