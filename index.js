@@ -6,6 +6,9 @@ const dotenv = require("dotenv");
 const { OpenAI } = require("openai");
 const path = require("path");
 const cors = require("cors");
+const { v4: uuidv4 } = require("uuid"); // Para generar nombres únicos de archivos
+const fs = require("fs");
+const fetch = require("node-fetch");
 
 dotenv.config();
 
